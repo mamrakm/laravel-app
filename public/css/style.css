@@ -47,20 +47,14 @@ h1 {
 
 .table {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr;
-    border-top: 2px solid #007bff;
-    border-bottom: 2px solid #007bff;
-}
-
-.table {
-    display: grid;
     grid-template-columns: 1fr 2fr 2fr 2fr; /* Adjust columns as needed */
-    gap: 10px; /* Add spacing between rows */
+    gap: 5px; /* Add spacing between rows */
     border-top: 2px solid #007bff;
     border-bottom: 2px solid #007bff;
 }
 
 .table-header {
+    font-weight: bold;
     display: contents; /* Maintain grid structure */
 }
 
@@ -76,12 +70,16 @@ h1 {
 .table-row div {
     padding: 10px;
     border-bottom: 1px solid #ccc;
-    background-color: #fff;
+    background-color: lightsteelblue;
     text-align: left;
 }
 
 .table-row:nth-child(even) div {
-    background-color: #f2f2f2; /* Alternate row colors */
+    background-color:lightgoldenrodyellow; /* Alternate row colors */
+}
+
+.table-row:nth-child(odd) div {
+    background-color: skyblue; /* Alternate row colors */
 }
 
 /* Footer styles */
