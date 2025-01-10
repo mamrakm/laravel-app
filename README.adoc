@@ -1,0 +1,62 @@
+= laravel-app
+
+This is a project to demonstrate how to use `Laravel` and serves as learning environment for the framework itself and `PHP8+` programming.
+
+== Requirements
+
+.In order to run application certain requirements must be met:
+
+* php8
+* php8-bcmath
+* php8-cli
+* php8-curl
+* php8-dom
+* php8-fileinfo
+* php8-intl
+* php8-mbstring
+* php8-mysql
+* php8-openssl
+* php8-pdo
+* php8-phar
+* php8-phpunit
+* php8-tokenizer
+* php8-xmlwriter
+* php8-zip
+* php8-zlib
+
+* Composer
+* Node.js
+* NPM
+* MariaDB (it will be installed automatically as a Docker container when docker-compose is used, but it can be installed manually, in that case you must update .env file with proper configuration)
+* Docker (optional)
+
+PHP 8.0+ with all necessary extensions. Use your system's package manager to install them. On ubuntu, you can use the following command:
+[listing]
+sudo apt install php8.0 php8.0-bcmath php8.0-cli php8.0-curl php8.0-dom php8.0-fileinfo php8.0-intl php8.0-mbstring php8.0-mysql php8.0-openssl php8.0-pdo php8.0-phar php8.0-phpunit php8.0-tokenizer php8.0-xmlwriter php8.0-zip php8.0-zlib
+
+on openSUSE, you can use the following command:
+[listing]
+sudo zypper install php8 php8-bcmath php8-cli php8-curl php8-dom php8-fileinfo php8-intl php8-mbstring php8-mysql php8-openssl php8-pdo php8-phar php8-phpunit php8-tokenizer php8-xmlwriter php8-zip php8-zlib
+The following PHP extensions are currently installed on the system where application runs without any issues:
+
+on Fedora, you can use the following command:
+[listing]
+sudo dnf install php php-bcmath php-cli php-curl php-dom php-fileinfo php-intl php-mbstring php-mysqlnd php-openssl php-pdo php-phar php-phpunit php-tokenizer php-xmlwriter php-zip php-zlib
+
+If you use other system you its native way to install PHP and it's extensions.
+
+== Installation
+* Following commands must be run in order to install the application:
+[listing]
+composer global require laravel/installer
+npm install && npm run build
+
+== How to run
+In order to run development mode, you must run the following command:
+[listing]
+php artisan serve
+
+or
+
+[listing]
+composer run dev
