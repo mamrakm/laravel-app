@@ -7,42 +7,53 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
 <body>
-<h1>Customer List</h1>
-@if (session('success'))
-    <p style="color: green;">{{ session('success') }}</p>
-@endif
 <div class="container">
     <div class="header">
-        <h2>Customers</h2>
-        <a href="{{ route('customers.create') }}">Add New Customer</a>
+        <h1>Customer List</h1>
+        <a href="{{ route('customers.create') }}" class="btn-primary">Add New Customer</a>
     </div>
 
-    <div class="table">
-        <div class="table-header">
-            <div>ID</div>
-            <div>Name</div>
-            <div>Email</div>
-            <div>Phone</div>
+    <!-- Success Message -->
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
         </div>
-        @forelse ($customers as $customer)
-            <div class="table-row">
-                <div>{{ $customer->id }}</div>
-                <div>{{ $customer->name }}</div>
-                <div>{{ $customer->email }}</div>
-                <div>{{ $customer->phone }}</div>
+    @endif
+
+    <!-- Table of Customers -->
+    @if ($customers->isEmpty())
+        <p>No customers found.</p>
+    @else
+        <div class="table">
+            <!-- Table Header -->
+            <div class="table-header">
+                <div>Name</div>
+                <div>Email</div>
+                <div>Actions</div>
             </div>
-        @empty
-            <div class="table-row">
-                <div colspan="4" style="grid-column: 1 / -1; text-align: center;">
-                    No customers found.
+
+            <!-- Table Rows -->
+            @foreach ($customers as $customer)
+                <div class="table-row">
+                    <div>{{ $customer->name }}</div>
+                    <div>{{ $customer->email }}</div>
+                    <div>
+                        <a href="{{ route('customers.edit', $customer) }}" class="btn-edit">Edit</a>
+                        <form action="{{ route('customers.destroy', $customer) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-delete" onclick="return confirm('Are you sure?');">Delete</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
-        @endforelse
-    </div>
+            @endforeach
+        </div>
+    @endif
 </div>
 
-<div class="footer">
-    &copy; {{ date('Y') }} My Laravel App
-</div>
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; {{ date('Y') }} My Laravel App</p>
+</footer>
 </body>
 </html>
