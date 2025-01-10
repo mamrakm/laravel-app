@@ -24,9 +24,13 @@ This is a project to demonstrate how to use `Laravel` and serves as learning env
 * php8-zip
 * php8-zlib
 
+.Additionaly, the following tools must be installed:
+
 * Composer
 * Node.js
 * NPM
+
+.The following are optional:
 * MariaDB (it will be installed automatically as a Docker container when docker-compose is used, but it can be installed manually, in that case you must update .env file with proper configuration)
 * Docker (optional)
 
