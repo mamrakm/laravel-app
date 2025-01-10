@@ -4,18 +4,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## [0.1.0] - YYYY-MM-DD
+## [0.1.0] - 2025-01-10
 ### Added
-- **test**: Added tests for the `Customer` feature. ([ab8a0c8](https://your-repo/commit/ab8a0c8))
-- **chore**: Added `docker-compose.yml` for containerized development. ([68c8f8a](https://your-repo/commit/68c8f8a))
-- **ci**: Configured CI with `docker-compose.yml`. ([5721c11](https://your-repo/commit/5721c11))
-- **style**: Added basic styles for the application. ([85dd177](https://your-repo/commit/85dd177))
+- **test**: Add tests for the `Customer` feature. ([5aeab4d](https://your-repo/commit/5aeab4d))
+- **chore**: Add `docker-compose.yml` for containerized development. ([f336690](https://your-repo/commit/f336690))
+- **ci**: Add `docker-compose.yml` to configure CI workflows. ([b027db0](https://your-repo/commit/b027db0))
+- **style**: Add basic styles for the application. ([02a1fcd](https://your-repo/commit/02a1fcd))
 
 ### Changed
-- **config**: Updated `.env` for WSL2 compatibility and connected the database to PostgreSQL running in Docker. ([88ff20e](https://your-repo/commit/88ff20e))
+- **config**: Update `.env` for WSL2 compatibility and connect the database to PostgreSQL running in Docker. ([7dfe9fe](https://your-repo/commit/7dfe9fe))
 
-### Fixed
-- N/A
+### Updated
+- **chore**: Update dependencies to the latest versions. ([95f4369](https://your-repo/commit/95f4369))
+
+### Documentation
+- **docs**: Add `CHANGELOG.md` to document application changes. ([db0c21d](https://your-repo/commit/db0c21d))
 
 ### Initial Commit
-- **setup**: Created the initial structure of the project. ([aa461cc](https://your-repo/commit/aa461cc))
+- Created the initial structure of the project. ([a669da2](https://your-repo/commit/a669da2))
