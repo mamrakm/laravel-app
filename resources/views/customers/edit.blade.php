@@ -13,7 +13,6 @@
         <a href="{{ route('customers.index') }}" class="btn-primary">Back to Customer List</a>
     </div>
 
-    <!-- Error Messages -->
     @if ($errors->any())
         <div class="alert error">
             <ul>
@@ -24,7 +23,6 @@
         </div>
     @endif
 
-    <!-- Edit Form -->
     <form action="{{ route('customers.update', $customer) }}" method="POST" class="form">
         @csrf
         @method('PUT')
@@ -39,11 +37,15 @@
             <input type="email" id="email" name="email" value="{{ old('email', $customer->email) }}" required>
         </div>
 
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" value="{{ old('phone', $customer->phone) }}" required>
+        </div>
+
         <button type="submit" class="btn-submit">Update Customer</button>
     </form>
 </div>
 
-<!-- Footer -->
 <footer class="footer">
     <p>&copy; {{ date('Y') }} My Laravel App</p>
 </footer>

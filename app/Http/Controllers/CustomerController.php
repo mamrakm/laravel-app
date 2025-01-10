@@ -33,6 +33,7 @@ class CustomerController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:customers,email',
+            'phone' => 'required|string|max:20',
         ]);
 
         // Create a new customer
@@ -59,6 +60,7 @@ class CustomerController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:customers,email,' . $customer->id,
+            'phone' => 'required|string|max:20',
         ]);
 
         // Update the customer
