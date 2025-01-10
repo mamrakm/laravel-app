@@ -52,30 +52,36 @@ h1 {
     border-bottom: 2px solid #007bff;
 }
 
-.table-header,
+.table {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr; /* Adjust columns as needed */
+    gap: 10px; /* Add spacing between rows */
+    border-top: 2px solid #007bff;
+    border-bottom: 2px solid #007bff;
+}
+
+.table-header {
+    display: contents; /* Maintain grid structure */
+}
+
 .table-row {
-    display: contents; /* Ensures rows act as a group */
+    display: contents; /* Maintain grid structure */
+}
+
+.main-content {
+    padding: 20px;
 }
 
 .table-header div,
 .table-row div {
     padding: 10px;
     border-bottom: 1px solid #ccc;
-}
-
-.table-header div {
-    font-weight: bold;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #fff;
     text-align: left;
 }
 
 .table-row:nth-child(even) div {
-    background-color: #f2f2f2;
-}
-
-.table-row div {
-    text-align: left;
+    background-color: #f2f2f2; /* Alternate row colors */
 }
 
 /* Footer styles */
