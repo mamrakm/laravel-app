@@ -3,23 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use App\Services\CustomerService;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    private CustomerService $customerService;
+
+    /**
+     * @param $customerService
+     *
+     */
+    public function __construct($customerService)
+    {
+        $this->customerService = $customerService;
+    }
+
     /**
      * Display a listing of the customers.
      */
-    public function index()
+    public
+    function index()
     {
-        $customers = Customer::all(); // Fetch all customers from the database
-        return view('customers.index', compact('customers')); // Pass customers to the view
+        $customers = $this->customerService->getAllCustomers();
+        return view('customers.index', compact('customers'));
     }
 
     /**
      * Show the form for creating a new customer.
      */
-    public function create()
+    public
+    function create()
     {
         return view('customers.create'); // Show the customer creation form
     }
@@ -27,7 +41,8 @@ class CustomerController extends Controller
     /**
      * Store a newly created customer in storage.
      */
-    public function store(Request $request)
+    public
+    function store(Request $request)
     {
         // Validate the request data
         $validated = $request->validate([
@@ -37,7 +52,7 @@ class CustomerController extends Controller
         ]);
 
         // Create a new customer
-        Customer::create($validated);
+        $customerService->createCustomer($validated);
 
         // Redirect to the customer list with success message
         return redirect()->route('customers.index')->with('success', 'Customer added successfully!');
@@ -46,7 +61,8 @@ class CustomerController extends Controller
     /**
      * Show the form for editing the specified customer.
      */
-    public function edit(Customer $customer)
+    public
+    function edit(Customer $customer)
     {
         return view('customers.edit', compact('customer')); // Show the customer edit form
     }
@@ -54,7 +70,8 @@ class CustomerController extends Controller
     /**
      * Update the specified customer in storage.
      */
-    public function update(Request $request, Customer $customer)
+    public
+    function update(Request $request, Customer $customer)
     {
         // Validate the request data
         $validated = $request->validate([
@@ -73,7 +90,8 @@ class CustomerController extends Controller
     /**
      * Remove the specified customer from storage.
      */
-    public function destroy(Customer $customer)
+    public
+    function destroy(Customer $customer)
     {
         // Delete the customer
         $customer->delete();
