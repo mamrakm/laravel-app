@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mariadb:
-    container_name: laravel-mariadb
+    container_name: php-laravel
     image: mariadb:latest
     restart: always
     environment:
