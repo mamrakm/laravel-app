@@ -3,12 +3,12 @@
 namespace App\Services;
 
 use App\Models\Customer;
-use App\Repositories\CustomerRepository;
+use App\Repositories\CustomerRepositoryImpl;
 use Illuminate\Database\Eloquent\Collection;
 
-readonly class CustomerService implements ICustomerService
+readonly class CustomerServiceImpl implements ICustomerService
 {
-    public function __construct(public CustomerRepository $customerRepository)
+    public function __construct(public CustomerRepositoryImpl $customerRepository)
     {
     }
 

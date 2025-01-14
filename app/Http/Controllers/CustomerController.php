@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
-use App\Services\CustomerService;
+use App\Services\CustomerServiceImpl;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    private CustomerService $customerService;
+    private CustomerServiceImpl $customerService;
 
     /**
      * @param $customerService

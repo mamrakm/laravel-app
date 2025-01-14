@@ -3,17 +3,17 @@
 namespace App\Providers;
 
 use App\Models\Customer;
-use App\Repositories\CustomerRepository;
-use App\Services\CustomerService;
+use App\Repositories\CustomerRepositoryImpl;
+use App\Services\CustomerServiceImpl;
+use App\Services\ICustomerService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->singleton(CustomerRepository::class, fn () => new CustomerRepository(new Customer()));
-        $this->app->singleton(CustomerService::class, fn ($app) => new CustomerService($app->make(CustomerRepository::class)));
-    }
+        $this->app->singleton(CustomerRepositoryImpl::class, fn () => new CustomerRepositoryImpl(new Customer()));
+        $this->app->bind(ICustomerService::class, CustomerServiceImpl::class);    }
 
     public function boot(): void
     {
