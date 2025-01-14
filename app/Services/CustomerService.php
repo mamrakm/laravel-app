@@ -6,7 +6,7 @@ use App\Models\Customer;
 use App\Repositories\CustomerRepository;
 use Illuminate\Database\Eloquent\Collection;
 
-readonly class CustomerService
+readonly class CustomerService implements ICustomerService
 {
     public function __construct(public CustomerRepository $customerRepository)
     {
