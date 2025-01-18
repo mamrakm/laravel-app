@@ -5,7 +5,7 @@ namespace App\Services;
 use App\Models\Customer;
 use Illuminate\Database\Eloquent\Collection;
 
-interface ICustomerService
+interface CustomerService
 {
     public function createCustomer($validated);
 

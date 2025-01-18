@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\Customer;
 use Illuminate\Database\Eloquent\Collection;
 
-class CustomerRepositoryImpl implements ICustomerRepository
+class CustomerRepositoryImpl implements CustomerRepository
 {
     public function __construct(private readonly Customer $customer)
     {

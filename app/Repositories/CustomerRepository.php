@@ -5,7 +5,7 @@ namespace App\Repositories;
 use App\Models\Customer;
 use Illuminate\Database\Eloquent\Collection;
 
-interface ICustomerRepository
+interface CustomerRepository
 {
     public function getAll(): Collection;
 
