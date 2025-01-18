@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    private CustomerServiceImpl $customerService;
+    private CustomerService $customerService;
 
     /**
      * @param $customerService
