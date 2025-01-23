@@ -49,7 +49,7 @@ class CustomerController extends Controller
         ]);
 
         // Create a new customer
-        $customerService->createCustomer($validated);
+        $this->customerService->createCustomer($validated);
 
         // Redirect to the customer list with success message
         return redirect()->route('customers.index')->with('success', 'Customer added successfully!');
