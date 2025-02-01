@@ -26,4 +26,4 @@ class AppServiceProvider extends ServiceProvider
         // Other boot logic
     }
 }
-        
+
