@@ -16,9 +16,9 @@ class AppServiceProvider extends ServiceProvider
     {
         //x$this->app->singleton(CustomerRepository::class, fn() => new CustomerRepositoryImpl(new Customer()));
         $this->app->bind(CustomerService::class, CustomerServiceImpl::class);
-        $this->app->bind(ProductService::class, ProductServiceImpl::class);
-
         $this->app->bind(CustomerRepository::class, CustomerRepositoryImpl::class);
+        $this->app->bind(ProductService::class, ProductServiceImpl::class);
+        $this->app->bind(ProductRepository::class, ProductRepositoryImpl::class);
     }
 
     public function boot(): void
@@ -26,4 +26,3 @@ class AppServiceProvider extends ServiceProvider
         // Other boot logic
     }
 }
-
